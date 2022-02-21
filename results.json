@@ -1,0 +1,15 @@
+{
+  "excluded": [],
+  "failed": [],
+  "invalid": [],
+  "passed": [
+    {
+      "describe": "build/4",
+      "file": "/home/alexandrabsouz/study/elixir/flight-reservations/test/bookings/booking_test.exs",
+      "line": 7,
+      "module": "Elixir.Flightex.Bookings.BookingTest",
+      "test": "test build/4 when all params are valid, returns a booking"
+    }
+  ],
+  "skiped": []
+}
