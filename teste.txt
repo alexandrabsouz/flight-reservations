@@ -1,0 +1,93 @@
+iex(3)> user1 = %{                      
+       id: UUID.uuid4(),
+       name: "Jp",
+       email: "jp@banana.com",
+       cpf: "12345678900"
+     }
+%{
+  cpf: "12345678900",
+  email: "jp@banana.com",
+  id: "9354e405-ef21-40bc-b63d-3bb162037ba4",
+  name: "Jp"
+}
+iex(4)> user2 = %{
+       id: UUID.uuid4(),
+       name: "alexa",
+       email: "alexa@banana.com",
+       cpf: "3406873409"
+     }
+%{
+  cpf: "3406873409",
+  email: "alexa@banana.com",
+  id: "3eb1e890-04e1-4f58-ae4a-7b1259d57c2d",
+  name: "alexa"
+}
+iex(5)> user3 = %{
+     id: UUID.uuid4(),
+     name: "otavio",
+     email: "otavio@banana.com",
+     cpf: "3540968405"
+   }
+%{
+  cpf: "3540968405",
+  email: "otavio@banana.com",
+  id: "94d8728d-7384-4908-96c6-8100ebf4b47f",
+  name: "otavio"
+}
+iex(6)> Flightex.create_or_update_user(user1)
+{:ok, "user info has been saved"}
+iex(7)> Flightex.create_or_update_user(user2)
+{:ok, "user info has been saved"}
+iex(8)> Flightex.create_or_update_user(user3)
+{:ok, "user info has been saved"}
+
+
+
+iex(9)> book1 = %{
+  complete_date: ~N[2001-05-07 03:05:00],
+  local_origin: "Brasilia",
+  local_destination: "Bananeiras",
+  user_id: "12345678900",
+  id: UUID.uuid4()
+...(9)>     }
+%{
+  complete_date: ~N[2001-05-07 03:05:00],
+  id: "cfaefef5-ba07-4254-b937-ef96fbf33634",
+  local_destination: "Bananeiras",
+  local_origin: "Brasilia",
+  user_id: "12345678900"
+}
+iex(10)> book2 = %{                                  
+  complete_date: ~N[2003-05-07 03:05:00],
+  local_origin: "Nova York",
+  local_destination: "Floriculture",
+  user_id: "94d8728d-7384-4908-96c6-8100ebf4b47f",
+  id: UUID.uuid4()
+...(10)>     }
+%{
+  complete_date: ~N[2003-05-07 03:05:00],
+  id: "2997d5c9-0678-4325-bb79-549a69128abe",
+  local_destination: "Floriculture",
+  local_origin: "Nova York",
+  user_id: "94d8728d-7384-4908-96c6-8100ebf4b47f"
+}
+iex(11)> book3 = %{
+   complete_date: ~N[2003-05-07 03:05:00],
+   local_origin: "Nova York",
+   local_destination: "Floriculture",
+   user_id: "3eb1e890-04e1-4f58-ae4a-7b1259d57c2d",
+   id: UUID.uuid4()
+ }
+%{
+  complete_date: ~N[2003-05-07 03:05:00],
+  id: "aa61410e-ea58-4bd3-97fd-ea785c74a569",
+  local_destination: "Floriculture",
+  local_origin: "Nova York",
+  user_id: "3eb1e890-04e1-4f58-ae4a-7b1259d57c2d"
+}
+iex(12)> Flightex.create_or_update_booking(book1)              
+{:ok, "60cf52f8-b6ce-4f8d-b331-b26d2125e4d9"}
+iex(13)> Flightex.create_or_update_booking(book2)
+{:ok, "5525122c-45d7-4ec2-af14-6cf9391ae548"}
+iex(14)> Flightex.create_or_update_booking(book3)
+{:ok, "6472ca6e-64c8-4cd7-a2b4-e508edf0b44a"}
