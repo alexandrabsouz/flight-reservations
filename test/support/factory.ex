@@ -20,6 +20,5 @@ defmodule Flightex.Factory do
       local_destination: "Floriculture",
       user_id: "3eb1e890-04e1-4f58-ae4a-7b1259d57c2d",
       id: UUID.uuid4()
-    }
   end
 end
